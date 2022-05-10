@@ -1,0 +1,39 @@
+# action.yml
+name: 'Download from Sharepoint'
+description: 'Download a file from a Sharepoint library'
+author: 'NI'
+branding:
+  icon: 'download-cloud'  
+  color: 'green'
+inputs:
+  site_url: 
+    description: 'The Sharepoint site url'
+    required: true
+  sharepoint_user: 
+    description: 'User name to use for authentication'
+    required: true
+  sharepoint_password: 
+    description: 'Password to use for authentication'
+    required: true
+  target_folder: 
+    description: 'The path where to download the archive in the server'
+    required: true
+    default: "Downloads"
+  library_folder: 
+    description: 'The folder to download in the server'
+    required: true
+    default: "Shared documents"
+  filter: 
+    description: 'The filter file to download in the server'
+    required: true
+    default: ""
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    SITE_URL : ${{ inputs.site_url }}
+    USER : ${{ inputs.sharepoint_user }}
+    PASSWD: ${{ inputs.sharepoint_password }}
+    TARGET_FOLDER : ${{ inputs.target_folder }}
+    LIB_FOLDER : ${{ inputs.library_folder }}
+    FILTER : ${{ inputs.filter }}

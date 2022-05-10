@@ -1,0 +1,22 @@
+{
+  "name": "action-sharepoint-download",
+  "version": "1.0.0",
+  "description": "A simple Github Action that download an archive from a Sharepoint library  and download it to a repository",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolasiannarilli/action-sharepoint-download.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicolasiannarilli/action-sharepoint-download/issues"
+  },
+  "homepage": "https://github.com/nicolasiannarilli/action-sharepoint-download#readme",
+  "dependencies": {
+    "sppull": "^3.0.1"
+  }
+}
